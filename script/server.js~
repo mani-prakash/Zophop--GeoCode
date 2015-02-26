@@ -145,7 +145,7 @@ function citySelected() {
 function getRoute(val) {
 	var vl = val.split(',');
 	var v = vl[0];
-	$.ajax({url:"http://"+ip+"/scheduler/"+city.city+"/routes/"+'297',xhrFields:{withCredentials:false},success:function(result){	
+	$.ajax({url:"http://"+ip+"/scheduler/"+city.city+"/routes/"+'296',xhrFields:{withCredentials:false},success:function(result){	
 		var r = preParse(result);
 		var obj = JSON.parse(r);
 		vi = obj.rows[0].value;

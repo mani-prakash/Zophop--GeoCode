@@ -540,6 +540,7 @@ function floatMacting(ind) {
 	return false; 
 }
 function deldone1(ind) {
+	console.log('deldone1 :'+ind);			
 	if (ind<lst.length) {
 		if (lst1[ind]!=null&&typeof lst1[ind]!= 'undefined'&&lst[ind].state!=2) {
 					console.log("its working del");					
@@ -769,6 +770,7 @@ function create(m,lti,lgi)
 	var temp = new mark(lti,lgi,nm,1);
 	lst.splice(seq,0,temp);
 	lst1.splice(seq,0,null);
+	console.log(lst[seq]+': d :'+lst1[seq]);
 	for (i=1;i<lst1.length;i++) {
 		var mrk = lst1[i];		
 		if (typeof mrk != 'undefined'&&mrk!=null&&mrk.details.M_id>=seq) {
@@ -777,12 +779,12 @@ function create(m,lti,lgi)
 		}
 	}
 	var mk = addMarker(seq);	
+	console.log(lst[seq]+': d1 :'+lst1[seq]);	
 	dragEvent(mk);	
 	change();
 	setTable();
 		
 	if (seq<lst.length-1) {
-		console.log('next del');
 		if (lst[seq+1].stop_name==lst[seq].stop_name&&lst[seq+1].state==2) {
 						console.log('next del');						
 						deldone1(seq+1);
@@ -857,6 +859,7 @@ google.maps.event.addListener(marker, 'click', function() {
     infowindow.open(map.map,marker);
   });
   lst1[seq] = (marker);
+  console.log('marker done');
 	return marker;
 }
 }
@@ -1098,17 +1101,18 @@ function removeNotifications() {
 	ele.innerHTML = '';
 }
 function make_markerNew(ind) {
-			var mar = lst1[ind];
+			console.log('make_markerNew :'+ind);			
+			var mar = lst1[ind];					
 					var Mi = ind;			   
 				mar.details.state = 1;
 				var Mi = mar.details.M_id;				
 				lst[Mi].stop_id=null;
-				lst[Mi].stop_city=cityM.stop_city;	
+				//lst[Mi].stop_city=cityM.stop_city;	
 				lst[Mi].stop_code = null;
 				lst[Mi].alias = [];
 				lst[Mi].alias.push(lst[Mi].stop_name);				
 				//lst[Mi].station_type=cityM.station_type;
-				lst[Mi].stop_name=cityM.stop_name;
+				//lst[Mi].stop_name=cityM.stop_name;
 				lst[Mi].feed_id=null;
 				lst[Mi].state = 1;
 }
@@ -1232,6 +1236,7 @@ function clean() {
 	$("#swapbts").html("");
 }
 function removeMarker1(ind) {
+	console.log('removeMarker1'+ind);
 	if(!confirm('Press yes to Delete'))
 	{
 		console.log('pressed No');
