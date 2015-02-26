@@ -1,0 +1,34 @@
+body, div {
+    padding: 0;
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+div:not(#container) {
+    //border: 1px solid black;
+}
+#header {
+    background:orange;
+}
+#container {
+    background:blue;
+}
+#footer {
+    background:green;
+}
+.flex-init-setup {
+     display: -webkit-box;
+     display: -moz-box;
+     display: -webkit-flex;
+     display: -ms-flexbox;
+     display: flex;
+ }
+ .flex-ppal-setup {
+     -webkit-flex-flow: column wrap;
+     -moz-flex-flow: column wrap;
+     flex-flow: column wrap;
+     -webkit-justify-content: center;
+     -moz-justify-content: center;
+     justify-content: center;
+ }

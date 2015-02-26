@@ -1,0 +1,4 @@
+function ds() {
+	var auto;
+	
+	}
